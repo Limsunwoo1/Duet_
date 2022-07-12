@@ -15,7 +15,7 @@ CAfter_Image::CAfter_Image(Vector2D InPositon, Vector2D InScale) : CObject(Vecto
 
 CAfter_Image::~CAfter_Image()
 {
-	AAA
+	
 }
 
 void CAfter_Image::Update(float InDeltaTime)

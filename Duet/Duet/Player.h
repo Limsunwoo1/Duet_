@@ -15,6 +15,4 @@ public:
     virtual void Update(float InDeltaTime) override;
     virtual void Render(HDC InHdc) override;
     virtual void Collision(const CObject* InOtherObject) override;
-
-    void AddAfterimage(String TextuerFilePath, float InDeltaTime);
 };
