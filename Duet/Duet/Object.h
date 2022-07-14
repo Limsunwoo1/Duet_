@@ -13,8 +13,7 @@ enum class OBJ_LAYER : short {
 	BLOCK2 =		15,
 	BLOCK3 =		18,
 	AFTER_IMAGE =	20,
-	REDBALL	=		21,
-	BLUEBALL =		24,
+	BALL =			21,
 	UI =			30,
 	MAX =			32,
 };

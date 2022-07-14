@@ -162,6 +162,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Ball.h" />
+    <ClInclude Include="PlayerLife.h" />
     <ClInclude Include="RedBall.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="PlayerLife.cpp" />
     <ClCompile Include="RedBall.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="TimerManager.cpp" />

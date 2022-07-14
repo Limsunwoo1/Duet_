@@ -47,6 +47,9 @@
     <Filter Include="Object\Player\Ball\BlueBall">
       <UniqueIdentifier>{d066f7d6-492a-476b-90de-e0681fc5c1d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\UI\PlayerLife">
+      <UniqueIdentifier>{f11f0ead-2470-495f-b50f-0cd8d5deb03e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -149,6 +152,9 @@
     <ClInclude Include="RedBall.h">
       <Filter>Object\Player\Ball\RedBall</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerLife.h">
+      <Filter>Object\UI\PlayerLife</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimerManager.cpp">
@@ -220,6 +226,9 @@
     <ClCompile Include="After_Image.cpp" />
     <ClCompile Include="RedBall.cpp">
       <Filter>Object\Player\Ball\RedBall</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLife.cpp">
+      <Filter>Object\UI\PlayerLife</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,7 @@
 #include "UtilMath.h"
 #include "RedBall.h"
 #include "BlueBall.h"
+#include "PlayerLife.h"
 #include <string>
 
 CTitleScene::CTitleScene() 
@@ -37,59 +38,41 @@ void CTitleScene::Init()
 	//PLAYER
 	Vector2D RIngPosition;
 	CRedBall* RedBall = new CRedBall();
-	RedBall->SetObjectLayer(OBJ_LAYER::REDBALL);
+	RedBall->SetObjectLayer(OBJ_LAYER::BALL);
 	RedBall->SetTexture(CResourceManager::GetInstance()->FindTexture("REDBALL"));
 	RIngPosition.x = Ring->GetPosition().x + (Ring->GetScale().x * 0.45f);
 	RIngPosition.y = Ring->GetPosition().y;
 	RedBall->SetPosition(RIngPosition);
 	RedBall->Ball_InIt(Ring);
-	AddObject(OBJ_LAYER::REDBALL, RedBall);
 
 	CBlueBall* BlueBall = new CBlueBall();
-	BlueBall->SetObjectLayer(OBJ_LAYER::BLUEBALL);
+	BlueBall->SetObjectLayer(OBJ_LAYER::BALL);
 	BlueBall->SetTexture(CResourceManager::GetInstance()->FindTexture("BLUEBALL"));
 	RIngPosition.x = Ring->GetPosition().x - (Ring->GetScale().x * 0.45f);
 	RIngPosition.y = Ring->GetPosition().y;
 	BlueBall->SetPosition(RIngPosition);
 	BlueBall->Ball_InIt(Ring);
-	AddObject(OBJ_LAYER::BLUEBALL, BlueBall);
 
-	//BLOCK
-	CObject* Block1 = new CObject(Vector2D{ 300,100 }, Vector2D{ 50,50 });
-	Block1->SetObjectLayer(OBJ_LAYER::BLOCK1);
-	Block1->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
-	AddObject(OBJ_LAYER::BLOCK1, Block1);
+	RedBall->SetOtherBall(BlueBall);
+	BlueBall->SetOtherBall(RedBall);
 
-	CObject* Block2 = new CObject(Vector2D{ 300,200 }, Vector2D{ 50,50 });
-	Block2->SetObjectLayer(OBJ_LAYER::BLOCK2);
-	Block2->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK2"));
-	AddObject(OBJ_LAYER::BLOCK2, Block2);
-
-	CObject* Block3 = new CObject(Vector2D{ 300,300 }, Vector2D{ 50,50 });
-	Block3->SetObjectLayer(OBJ_LAYER::BLOCK3);
-	Block3->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK3"));
-	AddObject(OBJ_LAYER::BLOCK3, Block3);
+	AddObject(OBJ_LAYER::BALL, RedBall);
+	AddObject(OBJ_LAYER::BALL, BlueBall);
 
 	//UI
-	CUI* Heart = new CUI(Vector2D{ 30,30 }, Vector2D{ 50,50 });
-	Heart->SetObjectLayer(OBJ_LAYER::HEART);
-	Heart->SetTexture(CResourceManager::GetInstance()->FindTexture("HEART"));
-	AddObject(OBJ_LAYER::HEART, Heart);
-
-	Heart = new CUI(Vector2D{ 80,30 }, Vector2D{ 50,50 });
-	Heart->SetObjectLayer(OBJ_LAYER::HEART);
-	Heart->SetTexture(CResourceManager::GetInstance()->FindTexture("HEART"));
-	AddObject(OBJ_LAYER::HEART, Heart);
-
-	Heart = new CUI(Vector2D{ 130,30 }, Vector2D{ 50,50 });
-	Heart->SetObjectLayer(OBJ_LAYER::HEART);
-	Heart->SetTexture(CResourceManager::GetInstance()->FindTexture("HEART"));
-	AddObject(OBJ_LAYER::HEART, Heart);
-
+	CPlayerLife* Heart;
+	for (int i = 0; i < 3; ++i)
+	{
+		Heart = new CPlayerLife();
+		Heart->SetObjectLayer(OBJ_LAYER::HEART);
+		Heart->SetTexture(CResourceManager::GetInstance()->FindTexture("HEART"));
+		Heart->SetTarGetObj(RedBall);
+		AddObject(OBJ_LAYER::HEART, Heart);
+	}
 	// UI는 충돌체크하면 로직이 꼬일수도 있음 체크해도 UI 끼리만 하도록 주의
 	std::vector<OBJ_LAYER> checkLayerList;
-	checkLayerList.push_back(OBJ_LAYER::REDBALL);
-	checkLayerList.push_back(OBJ_LAYER::BLUEBALL);
+	checkLayerList.push_back(OBJ_LAYER::BALL);
+	checkLayerList.push_back(OBJ_LAYER::BALL);
 	CheckCollisionLayer[OBJ_LAYER::BLOCK1] = checkLayerList;
 	CheckCollisionLayer[OBJ_LAYER::BLOCK2] = checkLayerList;
 	CheckCollisionLayer[OBJ_LAYER::BLOCK3] = checkLayerList;

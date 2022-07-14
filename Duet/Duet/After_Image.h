@@ -7,7 +7,6 @@ class CAfter_Image :
 {
 private:
     CObject*    mTarGetBall;
-    float       Alpha;
 public:
     CAfter_Image();
     CAfter_Image(Vector2D InPositon, Vector2D InScale);

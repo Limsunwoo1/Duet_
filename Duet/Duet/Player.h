@@ -4,7 +4,7 @@
 class CPlayer :
     public CObject
 {
-    MEMBER(int, mHeart);
+    PROTECT_MEMBER(int, mHeart)
 protected:
     Vector2D mPrevPosition;
 public:

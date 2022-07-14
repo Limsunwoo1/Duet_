@@ -5,11 +5,17 @@
 CBall::CBall() : CPlayer(Vector2D{100,100}, Vector2D{ 50,50 })
 {
 	mPrevPosition = Position;
+	mCollsionDelTa = 0.f;
+	mRenderTime = false;
+	alph = 255;
 }
 
 CBall::CBall(Vector2D InPosition, Vector2D InScale) : CPlayer(Vector2D{ InPosition.x, InPosition.y }, Vector2D{ InScale.x, InScale.y })
 {
 	mPrevPosition = Position;
+	mCollsionDelTa = 0.f;
+	mRenderTime = false;
+	alph = 255;
 }
 
 CBall::~CBall()
@@ -19,9 +25,24 @@ CBall::~CBall()
 
 void CBall::Update(float InDeltaTime)
 {
-	for (CAfter_Image InImage : ObjAfImg)
+	static float delta = 0.f;
+	float Delete_Delta = 0.005f;
+
+	if (delta > Delete_Delta)
 	{
-		InImage.Update(InDeltaTime);
+		if(ObjAfImg.size() >= 1)
+			ObjAfImg.erase(ObjAfImg.begin());
+
+		delta -= Delete_Delta;
+	}
+	delta += InDeltaTime;
+	mCollsionDelTa += InDeltaTime;
+	mOtherBall->SetmCollsionDelTa(mCollsionDelTa);
+
+	if (mCollsionDelTa >= 1.f)
+	{
+		mRenderTime = false;
+		mOtherBall->SetmRenderTime(mRenderTime);
 	}
 
 	if (KEY_STATE(KEY::A) == KEY_STATE::HOLD)
@@ -44,7 +65,11 @@ void CBall::Update(float InDeltaTime)
 }
 
 void CBall::Render(HDC InHdc)
-{
+{	
+	int alph = 255;
+	if (mRenderTime)
+		alph = BlinkRender();
+
 	for (CAfter_Image InImage : ObjAfImg)
 	{
 		InImage.Render(InHdc);
@@ -59,7 +84,7 @@ void CBall::Render(HDC InHdc)
 		bf.BlendOp = AC_SRC_OVER;
 		bf.BlendFlags = 0;
 		bf.AlphaFormat = 0;
-		bf.SourceConstantAlpha = 255;
+		bf.SourceConstantAlpha = alph;
 
 		AlphaBlend(InHdc,
 			(int)(Position.x - (Texture->GetWidth() * 0.5f)),
@@ -81,6 +106,7 @@ void CBall::Render(HDC InHdc)
 			(int)(Position.x + (Scale.x * 0.5f)),
 			(int)(Position.y + (Scale.y * 0.5f)));
 	}
+
 }
 
 void CBall::Ball_InIt(CObject* InObject)
@@ -98,24 +124,43 @@ void CBall::Ball_InIt(CObject* InObject)
 
 void CBall::AddAfterimage(String TextuerFilePath, float InDeltaTime)
 {
-	if (ObjAfImg.size() >= 10)
+	if (ObjAfImg.size() >= 20)
 	{
 		ObjAfImg.erase(ObjAfImg.begin());
 	}
 
-	static float  delta = 0.0f;
-	delta += InDeltaTime;
-	if (delta > 0.01f)
+	if ((mPrevPosition.x != Position.x) || (mPrevPosition.y != Position.y))
 	{
-		if ((mPrevPosition.x != Position.x) || (mPrevPosition.y != Position.y))
-		{
-			CAfter_Image InObject = CAfter_Image(Vector2D{ Position.x, Position.y }, Vector2D{ Position.x, Position.y });
-			InObject.SetTexture(CResourceManager::GetInstance()->FindTexture(TextuerFilePath));
+		CAfter_Image InObject = CAfter_Image(Vector2D{ Position.x, Position.y }, Vector2D{ Position.x, Position.y });
+		InObject.SetTexture(CResourceManager::GetInstance()->FindTexture(TextuerFilePath));
 
-			ObjAfImg.push_back(InObject);
-		}
-		delta -= 0.01f;
+		ObjAfImg.push_back(InObject);
 	}
 
 	mPrevPosition = Position;
+}
+
+void CBall::Collision(const CObject* InOtherObject)
+{
+	if (mCollsionDelTa > 1.f)
+	{
+		CObject::Collision(InOtherObject);
+		mHeart -= 1;
+		mOtherBall->SetmHeart(mHeart);
+
+		mCollsionDelTa = 0.f;
+		mRenderTime = true;
+		mOtherBall->SetmCollsionDelTa(mCollsionDelTa);
+		mOtherBall->SetmRenderTime(mRenderTime);
+	}
+}
+
+int CBall::BlinkRender()
+{
+	if (alph == 255)
+		alph = 0;
+	else
+		alph = 255;
+
+	return alph;
 }
