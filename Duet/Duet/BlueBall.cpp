@@ -24,7 +24,7 @@ void CBlueBall::Update(float InDeltaTime)
 	String rdefile = "BLUEBALL";
 	CBlueBall::AddAfterimage(rdefile, InDeltaTime);
 	static int cnt = 0;
-	if (cnt >= 5)
+	if (cnt >= 3)
 	{
 		CBall::Update(InDeltaTime);
 		cnt = 0;

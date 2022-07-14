@@ -125,7 +125,7 @@ void CBall::Ball_InIt(CObject* InObject)
 
 void CBall::AddAfterimage(String TextuerFilePath, float InDeltaTime)
 {
-	if (ObjAfImg.size() >= 20)
+	if (ObjAfImg.size() >= 40)
 	{
 		ObjAfImg.erase(ObjAfImg.begin());
 	}
@@ -143,13 +143,13 @@ void CBall::AddAfterimage(String TextuerFilePath, float InDeltaTime)
 
 void CBall::Collision(const CObject* InOtherObject)
 {
-	if (mCollsionDelTa > 1.f)
+	if (mCollsionDelTa > 0.5f)
 	{
 		CObject::Collision(InOtherObject);
 		mHeart -= 1;
 		mOtherBall->SetmHeart(mHeart);
 
-		mCollsionDelTa = 0.f;
+		mCollsionDelTa = 0.0f;
 		mRenderTime = true;
 		mOtherBall->SetmCollsionDelTa(mCollsionDelTa);
 		mOtherBall->SetmRenderTime(mRenderTime);

@@ -61,15 +61,107 @@ void CStage1::Init()
 	AddObject(OBJ_LAYER::BALL, BlueBall);
 
 	//BLOCK
-	CBlock* Block1 = new CBlock(Vector2D{ 100,100 }, Vector2D{ 50,50 });
-	Block1->SetObjectLayer(OBJ_LAYER::BLOCK);
-	Block1->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
-	AddObject(OBJ_LAYER::BLOCK, Block1);
+	CBlock Block;
+	Block = CBlock(Vector2D{ 465,0 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
 
-	CBlock* Block2 = new CBlock(Vector2D{ 500,100 }, Vector2D{ 50,50 });
-	Block2->SetObjectLayer(OBJ_LAYER::BLOCK);
-	Block2->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK2"));
-	AddObject(OBJ_LAYER::BLOCK, Block2);
+	Block = CBlock(Vector2D{ 465, -250 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 225, -450 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 225, -650 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 600,-950 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 430,-950 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 100,-1250 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	Block = CBlock(Vector2D{ 230,-1250 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[0].push_back(Block);
+
+	/////////////////////////////////////////////////////////////////////////
+	Block = CBlock(Vector2D{ 120,0 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 400,0 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 145,-465 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 435,-465 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 545,-665 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 455,-665 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 115,-1000 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 435,-1000 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 135,-1300 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 228,-1300 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 250,-1600 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
+
+	Block = CBlock(Vector2D{ 550,-1600 }, Vector2D{ 50,50 });
+	Block.SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block.SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	PATTERN_BLOCKS[1].push_back(Block);
 
 	//UI
 	CPlayerLife* Heart;

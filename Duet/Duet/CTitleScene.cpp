@@ -61,15 +61,65 @@ void CTitleScene::Init()
 	AddObject(OBJ_LAYER::BALL, BlueBall);
 
 	//BLOCK
-	CBlock* Block1 = new CBlock(Vector2D{ 100,100 }, Vector2D{ 50,50 });
+	CBlock* Block1 = new CBlock(Vector2D{ 120,0 }, Vector2D{ 50,50 });
 	Block1->SetObjectLayer(OBJ_LAYER::BLOCK);
 	Block1->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
 	AddObject(OBJ_LAYER::BLOCK, Block1);
 
-	CBlock* Block2 = new CBlock(Vector2D{ 500,100 }, Vector2D{ 50,50 });
+	CBlock* Block2 = new CBlock(Vector2D{ 400,0 }, Vector2D{ 50,50 });
 	Block2->SetObjectLayer(OBJ_LAYER::BLOCK);
-	Block2->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK2"));
+	Block2->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK3"));
 	AddObject(OBJ_LAYER::BLOCK, Block2);
+
+	CBlock* Block3 = new CBlock(Vector2D{ 145,-465 }, Vector2D{ 50,50 });
+	Block3->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block3->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block3);
+
+	CBlock* Block4 = new CBlock(Vector2D{ 435,-465 }, Vector2D{ 50,50 });
+	Block4->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block4->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block4);
+	/// ///////////////////////////////////////////////////////////////////
+	CBlock* Block5 = new CBlock(Vector2D{ 545,-665 }, Vector2D{ 50,50 });
+	Block5->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block5->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block5);
+
+	CBlock* Block6 = new CBlock(Vector2D{ 455,-665 }, Vector2D{ 50,50 });
+	Block6->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block6->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block6);
+
+	CBlock* Block7 = new CBlock(Vector2D{ 115,-1000 }, Vector2D{ 50,50 });
+	Block7->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block7->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block7);
+
+	CBlock* Block8 = new CBlock(Vector2D{ 435,-1000 }, Vector2D{ 50,50 });
+	Block8->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block8->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block8);
+	//////////////////////////////////////////////////////////////////////////
+	CBlock* Block9 = new CBlock(Vector2D{ 135,-1300 }, Vector2D{ 50,50 });
+	Block9->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block9->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block9);
+
+	CBlock* Block10 = new CBlock(Vector2D{ 228,-1300 }, Vector2D{ 50,50 });
+	Block10->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block10->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block10);
+
+	CBlock* Block11 = new CBlock(Vector2D{ 250,-1600 }, Vector2D{ 50,50 });
+	Block11->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block11->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block11);
+
+	CBlock* Block12 = new CBlock(Vector2D{ 550,-1600 }, Vector2D{ 50,50 });
+	Block12->SetObjectLayer(OBJ_LAYER::BLOCK);
+	Block12->SetTexture(CResourceManager::GetInstance()->FindTexture("BLOCK1"));
+	AddObject(OBJ_LAYER::BLOCK, Block12);
 
 	//UI
 	CPlayerLife* Heart;

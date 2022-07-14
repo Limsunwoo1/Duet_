@@ -4,7 +4,7 @@ class CStage1 :
     public CScene
 {
 private:
-    std::vector<CObject> PATTERN_BLOCKS;
+    std::vector<CObject> PATTERN_BLOCKS[5];
 public:
     CStage1();
     virtual ~CStage1();
