@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClInclude Include="After_Image.h" />
     <ClInclude Include="Base.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="BlueBall.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CallStackTracer.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneManager.h" />
+    <ClInclude Include="CStage1.h" />
     <ClInclude Include="CTexture.h" />
     <ClInclude Include="CTitleScene.h" />
     <ClInclude Include="Define.h" />
@@ -178,12 +180,14 @@
   <ItemGroup>
     <ClCompile Include="After_Image.cpp" />
     <ClCompile Include="Base.cpp" />
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlueBall.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CallStackTracer.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneManager.cpp" />
+    <ClCompile Include="CStage1.cpp" />
     <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTitleScene.cpp" />
     <ClCompile Include="EventManager.cpp" />

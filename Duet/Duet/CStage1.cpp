@@ -1,4 +1,4 @@
-#include "CTitleScene.h"
+#include "CStage1.h"
 #include "Func.h"
 #include "Button.h"
 #include "Player.h"
@@ -14,24 +14,24 @@
 #include "PlayerLife.h"
 #include <string>
 
-CTitleScene::CTitleScene() 
+CStage1::CStage1()
 {
 }
 
-CTitleScene::~CTitleScene()
+CStage1::~CStage1()
 {
 
 }
 
-void CTitleScene::Init()
+void CStage1::Init()
 {
 	//BACKGROUND
-	CObject* BackGround = new CObject(Vector2D{340,490}, Vector2D{ 50,50 });
+	CObject* BackGround = new CObject(Vector2D{ 340,490 }, Vector2D{ 50,50 });
 	BackGround->SetObjectLayer(OBJ_LAYER::BACKGROUND);
 	BackGround->SetTexture(CResourceManager::GetInstance()->FindTexture("BACKGROUND"));
-	AddObject(OBJ_LAYER::BACKGROUND,BackGround);
+	AddObject(OBJ_LAYER::BACKGROUND, BackGround);
 
-	CObject* Ring = new CObject(Vector2D{340,600}, Vector2D{ 50,50 });
+	CObject* Ring = new CObject(Vector2D{ 340,600 }, Vector2D{ 50,50 });
 	Ring->SetObjectLayer(OBJ_LAYER::RING);
 	Ring->SetTexture(CResourceManager::GetInstance()->FindTexture("RING"));
 	AddObject(OBJ_LAYER::RING, Ring);
@@ -94,12 +94,17 @@ void CTitleScene::Init()
 	ETC1_LOG("커스텀 로그 테스트");
 }
 
-void CTitleScene::Clear()
-{	
+void CStage1::Render(HDC Inhdc)
+{
+
+}
+
+void CStage1::Clear()
+{
 	CScene::Clear();
 }
 
-void CTitleScene::Update(float InDeltaTime)
+void CStage1::Update(float InDeltaTime)
 {
 	CScene::Update(InDeltaTime);
 }

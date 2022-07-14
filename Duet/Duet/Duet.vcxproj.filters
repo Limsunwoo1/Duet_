@@ -50,6 +50,18 @@
     <Filter Include="Object\UI\PlayerLife">
       <UniqueIdentifier>{f11f0ead-2470-495f-b50f-0cd8d5deb03e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\After_image">
+      <UniqueIdentifier>{64853984-69a5-481f-a9b5-588e8e7a4509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Block">
+      <UniqueIdentifier>{83dfa900-00e1-401d-859f-4e1575e23bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CStage1">
+      <UniqueIdentifier>{525454bf-e9b9-40fa-ad6e-800f238cd9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CtitleScene">
+      <UniqueIdentifier>{c8f328ba-dfa3-4487-a85f-34c7cd051c9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -100,9 +112,6 @@
     <ClInclude Include="CScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="CTitleScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="CTexture.h">
       <Filter>Scene\Resource</Filter>
     </ClInclude>
@@ -148,12 +157,23 @@
     <ClInclude Include="Ball.h">
       <Filter>Object\Player\Ball</Filter>
     </ClInclude>
-    <ClInclude Include="After_Image.h" />
     <ClInclude Include="RedBall.h">
       <Filter>Object\Player\Ball\RedBall</Filter>
     </ClInclude>
     <ClInclude Include="PlayerLife.h">
       <Filter>Object\UI\PlayerLife</Filter>
+    </ClInclude>
+    <ClInclude Include="After_Image.h">
+      <Filter>Object\After_image</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="CTitleScene.h">
+      <Filter>Scene\CtitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="CStage1.h">
+      <Filter>Scene\CStage1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +205,6 @@
       <Filter>Manager</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="CTitleScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CTexture.cpp">
@@ -223,12 +240,23 @@
     <ClCompile Include="Ball.cpp">
       <Filter>Object\Player\Ball</Filter>
     </ClCompile>
-    <ClCompile Include="After_Image.cpp" />
     <ClCompile Include="RedBall.cpp">
       <Filter>Object\Player\Ball\RedBall</Filter>
     </ClCompile>
     <ClCompile Include="PlayerLife.cpp">
       <Filter>Object\UI\PlayerLife</Filter>
+    </ClCompile>
+    <ClCompile Include="After_Image.cpp">
+      <Filter>Object\After_image</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="CTitleScene.cpp">
+      <Filter>Scene\CtitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CStage1.cpp">
+      <Filter>Scene\CStage1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

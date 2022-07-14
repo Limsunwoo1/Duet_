@@ -31,7 +31,7 @@ public:
 
 	const CollisionLayerInfo& GetCollisionLayer() {return CheckCollisionLayer;}
 
-	void Render(HDC InHdc);
+	virtual void Render(HDC InHdc);
 	void ClearObject();
 };
 

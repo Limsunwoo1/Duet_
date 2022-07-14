@@ -2,6 +2,7 @@
 #include "KeyManager.h"
 #include "ResourceManager.h"
 #include "CTexture.h"
+
 CBall::CBall() : CPlayer(Vector2D{100,100}, Vector2D{ 50,50 })
 {
 	mPrevPosition = Position;
