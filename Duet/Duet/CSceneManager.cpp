@@ -1,6 +1,7 @@
 ﻿#include "CSceneManager.h"
 #include "CScene.h"
 #include "CTitleScene.h"
+#include "CStage1.h"
 #include "Func.h"
 #include "EventManager.h"
 #include <random>

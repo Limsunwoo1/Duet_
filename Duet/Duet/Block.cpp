@@ -17,5 +17,5 @@ CBlock::~CBlock()
 
 void CBlock::Update(float InDeltaTime)
 {
-	Position.y += 1 * InDeltaTime * 150;
+	Position.y += 1 * InDeltaTime * 200;
 }

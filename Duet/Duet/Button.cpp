@@ -2,7 +2,6 @@
 
 CButton::CButton(Vector2D InPosition, Vector2D InScale)
 	: CUI(InPosition, InScale)
-	, ButtonText("GAME")
 {
 	for (int i = 0; i < (int)BUTTON_STATE::MAX; ++i)
 	{

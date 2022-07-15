@@ -23,9 +23,11 @@ public:
     virtual void Render(HDC InHdc) override;
     virtual void Collision(const CObject* InOtherObject) override;
 public:
+
     void AddAfterimage(String TextuerFilePath, float InDeltaTime);
     int BlinkRender();
     void Ball_InIt(CObject* InObject);
     void SetOtherBall(CBall* InOtherBall) { mOtherBall = InOtherBall; };
+    bool BallHeart();
 };
 

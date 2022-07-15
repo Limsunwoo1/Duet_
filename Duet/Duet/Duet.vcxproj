@@ -166,6 +166,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="PlayerLife.h" />
     <ClInclude Include="RedBall.h" />
+    <ClInclude Include="RePlay_ReTurn.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Struct.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="PlayerLife.cpp" />
     <ClCompile Include="RedBall.cpp" />
+    <ClCompile Include="RePlay_ReTurn.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="UI.cpp" />

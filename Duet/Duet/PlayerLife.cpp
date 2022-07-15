@@ -22,6 +22,11 @@ void CPlayerLife::Update(float InDeltaTime)
 	{
 		this->SetTexture(CResourceManager::GetInstance()->FindTexture("BROKENHEART"));
 	}
+
+	if (PlayerLife_Id <= 0)
+	{
+		EntryPosition = 0;
+	}
 }
 
 void CPlayerLife::SetTarGetObj(CObject* InOBJ)

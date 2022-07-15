@@ -1,10 +1,12 @@
 #pragma once
 #include "CScene.h"
+#include "Define.h"
+
 class CStage1 :
     public CScene
 {
 private:
-    std::vector<CObject> PATTERN_BLOCKS[5];
+    MEMBER(int, PlayerHeartCnt)
 public:
     CStage1();
     virtual ~CStage1();

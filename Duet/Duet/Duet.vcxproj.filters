@@ -175,6 +175,7 @@
     <ClInclude Include="CStage1.h">
       <Filter>Scene\CStage1</Filter>
     </ClInclude>
+    <ClInclude Include="RePlay_ReTurn.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimerManager.cpp">
@@ -258,6 +259,7 @@
     <ClCompile Include="CStage1.cpp">
       <Filter>Scene\CStage1</Filter>
     </ClCompile>
+    <ClCompile Include="RePlay_ReTurn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameFramework.rc">

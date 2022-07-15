@@ -24,8 +24,10 @@ void CResourceManager::Init(HINSTANCE InHInst, HDC InHdc)
 	LoadTexture("BACKGROUND",L"Texture/BackGround.bmp");
 	LoadTexture("RING", L"Texture/Circle.bmp");
 	LoadTexture("BLOCK1", L"Texture/huddle1.bmp");
-	LoadTexture("BLOCK2", L"Texture/huddle2.bmp");
-	LoadTexture("BLOCK3", L"Texture/huddle3.bmp");
+	LoadTexture("GAMESTART", L"Texture/game start_BMP.bmp");
+	LoadTexture("REPLAY", L"Texture/replayiconBMP.bmp");
+	LoadTexture("RETURN", L"Texture/return iconBMP.bmp");
+	LoadTexture("DUET", L"Texture/DuetBMP.bmp");
 	LoadTexture("REDBALL", L"Texture/RedBall.bmp");
 	LoadTexture("BLUEBALL", L"Texture/BlueBall.bmp");
 	LoadTexture("HEART", L"Texture/Heart.bmp");

@@ -18,7 +18,7 @@ public:
     void Render(HDC InHdc);
 
 	void SetCurScene(CScene* InNewScene);
-	CScene* GetCurScene() {return CurScene;}
+	CScene* GetCurScene() const{return CurScene;}
 
 	void AddObject(OBJ_LAYER InLayer, CObject* InObject);
 	void DeleteObject(OBJ_LAYER InLayer, CObject* InObject);

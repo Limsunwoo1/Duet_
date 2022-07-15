@@ -9,7 +9,7 @@ enum class OBJ_LAYER : short {
 	RING =			5,
 	HEART =			7,
 	BROKENHEART =	8,
-	BLOCK =		12,
+	BLOCK =			12,
 	AFTER_IMAGE =	20,
 	BALL =			21,
 	UI =			30,

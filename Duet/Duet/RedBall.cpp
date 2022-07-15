@@ -23,7 +23,7 @@ void CRedBall::Update(float InDeltaTime)
 	String rdefile = "REDBALL";
 	CRedBall::AddAfterimage(rdefile, InDeltaTime);
 	static int cnt = 0;
-	if (cnt >= 3)
+	if (cnt >= 2)
 	{
 		CBall::Update(InDeltaTime);
 		cnt = 0;

@@ -2,6 +2,9 @@
 #include "KeyManager.h"
 #include "ResourceManager.h"
 #include "CTexture.h"
+#include "Button.h"
+#include "CSceneManager.h"
+#include "RePlay_ReTurn.h"
 
 CBall::CBall() : CPlayer(Vector2D{100,100}, Vector2D{ 50,50 })
 {
@@ -63,6 +66,12 @@ void CBall::Update(float InDeltaTime)
 	}
 
 	Position = Circle[mAngle];
+
+	if (mHeart <= 0)
+	{
+		CRePlay_ReTurn* ReGame = new CRePlay_ReTurn();
+		CSceneManager::GetInstance()->SetCurScene(ReGame);
+	}
 }
 
 void CBall::Render(HDC InHdc)
@@ -164,4 +173,12 @@ int CBall::BlinkRender()
 		alph = 255;
 
 	return alph;
+}
+
+bool CBall::BallHeart()
+{
+	if (mHeart <= 0)
+		return true;
+
+	return false;
 }

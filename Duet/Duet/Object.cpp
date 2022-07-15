@@ -44,7 +44,7 @@ void CObject::SetTexture(CTexture* InTexture)
 	Texture = InTexture;
 
 	SetScale(Vector2D((int)Texture->GetWidth(), (int)Texture->GetHeight()));
-	SetCollisionScale(Vector2D((int)Texture->GetWidth(), (int)Texture->GetHeight()));
+	SetCollisionScale(Vector2D((int)Texture->GetWidth() * 0.95, (int)Texture->GetHeight()) * 0.95);
 }
 
 void CObject::Update(float InDeltaTime)
