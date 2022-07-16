@@ -5,8 +5,6 @@
 class CStage1 :
     public CScene
 {
-private:
-    MEMBER(int, PlayerHeartCnt)
 public:
     CStage1();
     virtual ~CStage1();

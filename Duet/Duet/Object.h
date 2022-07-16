@@ -7,7 +7,6 @@ class CTexture;
 enum class OBJ_LAYER : short {
 	BACKGROUND =	0,
 	RING =			5,
-	HEART =			7,
 	BROKENHEART =	8,
 	BLOCK =			12,
 	AFTER_IMAGE =	20,

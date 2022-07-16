@@ -22,7 +22,7 @@ CStage1::CStage1()
 
 CStage1::~CStage1()
 {
-	CStage1::ClearObject();
+	CStage1::Clear();
 }
 
 void CStage1::Init()
@@ -61,8 +61,6 @@ void CStage1::Init()
 
 	AddObject(OBJ_LAYER::BALL, RedBall);
 	AddObject(OBJ_LAYER::BALL, BlueBall);
-
-	SetPlayerHeartCnt(RedBall->GetmHeart());
 
 	//BLOCK
 	CBlock* Block1 = new CBlock(Vector2D{ 465,0 }, Vector2D{ 50,50 });
@@ -395,15 +393,14 @@ void CStage1::Init()
 	for (int i = 0; i < 3; ++i)
 	{
 		Heart = new CPlayerLife();
-		Heart->SetObjectLayer(OBJ_LAYER::HEART);
+		Heart->SetObjectLayer(OBJ_LAYER::UI);
 		Heart->SetTexture(CResourceManager::GetInstance()->FindTexture("HEART"));
 		Heart->SetTarGetObj(RedBall);
-		AddObject(OBJ_LAYER::HEART, Heart);
+		AddObject(OBJ_LAYER::UI, Heart);
 	}
 
 	// UI는 충돌체크하면 로직이 꼬일수도 있음 체크해도 UI 끼리만 하도록 주의
 	std::vector<OBJ_LAYER> checkLayerList;
-	checkLayerList.push_back(OBJ_LAYER::BALL);
 	checkLayerList.push_back(OBJ_LAYER::BALL);
 	CheckCollisionLayer[OBJ_LAYER::BLOCK] = checkLayerList;
 

@@ -62,6 +62,9 @@
     <Filter Include="Scene\CtitleScene">
       <UniqueIdentifier>{c8f328ba-dfa3-4487-a85f-34c7cd051c9e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\CReGame">
+      <UniqueIdentifier>{f6b1d2db-bf27-42e5-a030-11e65c32e911}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -175,7 +178,9 @@
     <ClInclude Include="CStage1.h">
       <Filter>Scene\CStage1</Filter>
     </ClInclude>
-    <ClInclude Include="RePlay_ReTurn.h" />
+    <ClInclude Include="RePlay_ReTurn.h">
+      <Filter>Scene\CReGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimerManager.cpp">
@@ -259,7 +264,9 @@
     <ClCompile Include="CStage1.cpp">
       <Filter>Scene\CStage1</Filter>
     </ClCompile>
-    <ClCompile Include="RePlay_ReTurn.cpp" />
+    <ClCompile Include="RePlay_ReTurn.cpp">
+      <Filter>Scene\CReGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameFramework.rc">

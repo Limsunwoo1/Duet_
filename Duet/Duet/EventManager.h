@@ -6,6 +6,7 @@ enum class EVENT_TYPE : short {
 	NONE,
 	ADD_OBJECT,
 	DELETE_OBJECT,
+	CHANGE_SCENE,
 };
 
 // ADD_OBJECT

@@ -3,6 +3,7 @@
 #include "ResourceManager.h"
 static unsigned int id = 0;
 static int EntryPosition = 0;
+
 CPlayerLife::CPlayerLife() : CUI(Vector2D{30 + EntryPosition, 30}, Vector2D{50, 50})
 {
 	mTarGetObj = nullptr;
@@ -13,7 +14,8 @@ CPlayerLife::CPlayerLife() : CUI(Vector2D{30 + EntryPosition, 30}, Vector2D{50, 
 
 CPlayerLife::~CPlayerLife()
 {
-
+	id--;
+	EntryPosition -= 50;
 }
 
 void CPlayerLife::Update(float InDeltaTime)
@@ -21,11 +23,6 @@ void CPlayerLife::Update(float InDeltaTime)
 	if (mTarGetObj->GetmHeart() == PlayerLife_Id)
 	{
 		this->SetTexture(CResourceManager::GetInstance()->FindTexture("BROKENHEART"));
-	}
-
-	if (PlayerLife_Id <= 0)
-	{
-		EntryPosition = 0;
 	}
 }
 

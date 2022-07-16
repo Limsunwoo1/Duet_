@@ -5,6 +5,7 @@
 #include "Button.h"
 #include "CSceneManager.h"
 #include "RePlay_ReTurn.h"
+#include "EventManager.h"
 
 CBall::CBall() : CPlayer(Vector2D{100,100}, Vector2D{ 50,50 })
 {
@@ -67,10 +68,13 @@ void CBall::Update(float InDeltaTime)
 
 	Position = Circle[mAngle];
 
-	if (mHeart <= 0)
+	if (mHeart < 0)
 	{
-		CRePlay_ReTurn* ReGame = new CRePlay_ReTurn();
-		CSceneManager::GetInstance()->SetCurScene(ReGame);
+		CRePlay_ReTurn* InReGame = new CRePlay_ReTurn();
+		CSceneManager::GetInstance()->SetReGame(InReGame);
+
+		mHeart = 3;
+		mOtherBall->SetmHeart(mHeart);
 	}
 }
 

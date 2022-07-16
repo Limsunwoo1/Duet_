@@ -97,15 +97,8 @@ void CScene::ClearObject()
 			delete *iter;
 		}
 		OBJvector[layer].clear();
+		String str = std::to_string(OBJvector[layer].size());
+		LOG(str);
 	}
 	CheckCollisionLayer.clear();
-
-	for (int layer = (int)OBJ_LAYER::BACKGROUND; layer < (int)OBJ_LAYER::MAX; ++layer)
-	{
-		for (int i = 0; i < OBJvector[layer].size(); ++i)
-		{
-			if(!OBJvector[layer][i])
-				delete OBJvector[layer][i];
-		}
-	}
 }

@@ -4,6 +4,7 @@
 #include "CTitleScene.h"
 #include "CStage1.h"
 #include "CSceneManager.h"
+#include "EventManager.h"
 
 CRePlay_ReTurn::CRePlay_ReTurn()
 {
@@ -14,13 +15,14 @@ CRePlay_ReTurn::~CRePlay_ReTurn()
 {
 	CRePlay_ReTurn::Clear();
 }
+
 void CRePlay_ReTurn::Init()
 {
 	//BACKGROUND
-	CObject* BackGround = new CObject(Vector2D{ 340,490 }, Vector2D{ 50,50 });
-	BackGround->SetObjectLayer(OBJ_LAYER::BACKGROUND);
-	BackGround->SetTexture(CResourceManager::GetInstance()->FindTexture("BACKGROUND"));
-	AddObject(OBJ_LAYER::BACKGROUND, BackGround);
+	//CObject* BackGround = new CObject(Vector2D{ 340,490 }, Vector2D{ 50,50 });
+	//BackGround->SetObjectLayer(OBJ_LAYER::BACKGROUND);
+	//BackGround->SetTexture(CResourceManager::GetInstance()->FindTexture("BACKGROUND"));
+	//AddObject(OBJ_LAYER::BACKGROUND, BackGround);
 
 	//UI
 	CButton* RePlay = new CButton(Vector2D{ 340, 350 }, Vector2D{ 50, 50 });
@@ -49,11 +51,23 @@ void CRePlay_ReTurn::Clear()
 void CRePlay_ReTurn::RePlay()
 {
 	CStage1* Stage1 = new CStage1();
-	CSceneManager::GetInstance()->SetCurScene(Stage1);
+
+	EventInfo SetScene;
+	SetScene.Type = EVENT_TYPE::CHANGE_SCENE;
+	SetScene.Parameter = Stage1;
+
+	CEventManager::GetInstance()->AddEvent(SetScene);
+	CSceneManager::GetInstance()->ClearReGame();
 }
 
 void CRePlay_ReTurn::ReTurn()
 {
 	CTitleScene* Title = new CTitleScene();
-	CSceneManager::GetInstance()->SetCurScene(Title);
+	
+	EventInfo SetScene;
+	SetScene.Type = EVENT_TYPE::CHANGE_SCENE;
+	SetScene.Parameter = Title;
+
+	CEventManager::GetInstance()->AddEvent(SetScene);
+	CSceneManager::GetInstance()->ClearReGame();
 }

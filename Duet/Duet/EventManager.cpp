@@ -59,6 +59,11 @@ void CEventManager::Update(float InDeltaTime)
 
 				delete eventInfo.Parameter;
 			break;
+
+			case EVENT_TYPE::CHANGE_SCENE:
+				CSceneManager::GetInstance()->SetCurScene((CScene*)eventInfo.Parameter);
+				Clear();
+				return;
 		}
 	}
 	EventList.clear();

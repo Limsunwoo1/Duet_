@@ -37,6 +37,7 @@ void CTitleScene::Init()
 	GameRun->SetTexture(CResourceManager::GetInstance()->FindTexture("GAMESTART"));
 	GameRun->SetButtonFunc(BUTTON_STATE::LBUTTON_PRESS, GameStart);
 	AddObject(OBJ_LAYER::UI, GameRun);
+
 	// UI는 충돌체크하면 로직이 꼬일수도 있음 체크해도 UI 끼리만 하도록 주의
 	std::vector<OBJ_LAYER> checkLayerList;
 	checkLayerList.push_back(OBJ_LAYER::BALL);
@@ -63,5 +64,9 @@ void CTitleScene::Update(float InDeltaTime)
 void CTitleScene::GameStart()
 {
 	CStage1* StageStart = new CStage1();
-	CSceneManager::GetInstance()->SetCurScene(StageStart);
+	EventInfo SetScene;
+	SetScene.Type = EVENT_TYPE::CHANGE_SCENE;
+	SetScene.Parameter = StageStart;
+
+	CEventManager::GetInstance()->AddEvent(SetScene);
 }
